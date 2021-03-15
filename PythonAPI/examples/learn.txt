@@ -1,0 +1,33 @@
+# load CSV
+
+xd,yd,yaw_road desired
+
+# get current car position
+x0,y0,yaw0_car, yaw5_0_car, yaw10_0_car (mostly 0), throttle0, steer0 - init pos
+
+# calculate the deviation and feed it as a car state.. Utkarsh! bata ye
+find xd0,... s.t. dist(xd0,x0) is min --> next line
+x0 - check dist in list - moving iter - find minima
+got deviation vector - d = (dx,dy)
+diff in yaw = for the point corresponding to min point what was the yaw. usse calculate deviation, for 5 and 10 take pts aage wale
+(2.3,4.56,0.5,0.3,0.8,0.1,0.1)
+
+# discretize state
+blocks = size and number subj to experimentation
+
+# action space - discretized
+throttle_inc = np.linspace(-1,1,0.1)
+steer_inc = np.linspace(-1,1,0.1)
+
+# # figure out how to detect off road instances - end episode if it happens
+# find out
+
+# model reward - penalties
+alpha*deviation**2 + beta*yaw^2 +lmbd1*(throttle_inc)^2
+
+# q learn loop
+	# take action (feed to carla)
+	# get reward (after getting new state from carla)
+	# update q
+
+
