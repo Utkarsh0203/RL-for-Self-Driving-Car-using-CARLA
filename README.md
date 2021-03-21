@@ -14,7 +14,7 @@ Copy the folders listed in .gitignore from the untarred CARLA directory to the m
 Open three seperate bash terminals and execute the following seperately and serially
 
 ```sh
-./CarlaUE4.sh -windowed -opengl
+./CarlaUE4.sh -windowed -opengl -quality-level=Low
 ```
 
 ```sh
